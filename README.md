@@ -10,17 +10,17 @@ Go to API & Services to find the Calendar API:
 
 Click on Enable API & Services
 
-![Api_and_Services](/IMG/Screen Shot 2021-07-15 at 22.07.51.png)
-![Api_and_Services](/IMG/Screen Shot 2021-07-15 at 21.50.36.png)
+![Api_and_Services](/IMG/220751.png)
+![Api_and_Services](/IMG/215036.png)
 
 Search-for-Calendar:
-![Search-for-Calendar](/IMG/Screen Shot 2021-07-15 at 21.50.50.png)
+![Search-for-Calendar](/IMG/215050.png)
 
 Enable it:
-![Enable-Calendar](/IMG/Screen Shot 2021-07-15 at 21.51.04.png)
+![Enable-Calendar](/IMG/215104.png)
 
 ### To find the Project id:
 ![On-Project-Dashboard](/IMG/214920.png)
 
 ### Go to API & Services dashboard to add test users 
-![Add-Test-Users](/IMG/Screen Shot 2021-07-15 at 22.11.43.png)
+![Add-Test-Users](/IMG/221143.png)
