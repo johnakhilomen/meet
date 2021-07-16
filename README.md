@@ -20,7 +20,7 @@ Enable it:
 ![Enable-Calendar](/IMG/Screen Shot 2021-07-15 at 21.51.04.png)
 
 ### To find the Project id:
-![On-Project-Dashboard](/IMG/Screen Shot 2021-07-15 at 21.49.20.png)
+![On-Project-Dashboard](/IMG/214920.png)
 
 ### Go to API & Services dashboard to add test users 
 ![Add-Test-Users](/IMG/Screen Shot 2021-07-15 at 22.11.43.png)
