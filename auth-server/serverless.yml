@@ -1,18 +1,15 @@
+# "service" is the name of this project. This will also be added to your AWS resource names.
 service: auth-server
-
-frameworkVersion: '2'
 
 provider:
   name: aws
-  runtime: nodejs12.x
+  runtime: nodejs20.x
+  region: eu-central-1
+  timeout: 30 #in seconds, default is 6
   environment:
     CLIENT_ID: ${file(config.json):CLIENT_ID}
     CLIENT_SECRET: ${file(config.json):CLIENT_SECRET}
-    PROJECT_ID: ${file(config.json):PROJECT_ID}
     CALENDAR_ID: ${file(config.json):CALENDAR_ID}
-  region: ca-central-1
-  timeout: 60
-  lambdaHashingVersion: 20201221
 
 functions:
   getAuthURL:
