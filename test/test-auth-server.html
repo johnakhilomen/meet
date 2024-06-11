@@ -20,11 +20,12 @@
 
     <main id="container">
       <h1>OAuth2 Test</h1>
-      <h4><b>Step 1:</b> Get the OAuth URL</h4>
+      <h4><b>Step 1:</b> Get OAuth URL</h4>
       <p>Click the button below to get your OAuth URL.</p>
-      <button id="getURL">Get OAuth URL</button>
+      <button id="getAuthUrlButton">Get OAuth URL</button>
       <p id="result"></p>
       <a id="authURL" href target="_blank">Click to authorize</a>
+
       <!-- STEP 2 -- MAKE SURE STEP 1 WORKS BEFORE MOVING ON-->
 
       <h4>Step 2: Get your code and exchange for an access token</h4>
@@ -39,21 +40,21 @@
       </label>
       <button id="getToken">Get Token</button>
       <p id="accessToken"></p>
-      <!-- STEP 3 -- MAKE SURE STEP 3 WORKS BEFORE MOVING ON-->
       <h4>Step 3: Get the calendar events using your access token</h4>
       <button id="getEvents">Get Events</button>
       <p id="events"></p>
     </main>
+
+    <!-- New line of Code for Script starts here -->
     <script type="text/javascript">
-      // --------------------- STEP 1
-      const getURLElement = document.getElementById("getURL");
+      const getAuthUrlButton = document.getElementById("getAuthUrlButton");
       const resultElement = document.getElementById("result");
       const resultLink = document.getElementById("authURL");
       // Replace this with your own endpoint
       const getAuthURL =
-        "https://f7b3bvhbr2.execute-api.ca-central-1.amazonaws.com/dev/api/get-auth-url";
+        "https://3k7yb5v1ja.execute-api.eu-central-1.amazonaws.com/dev/api/get-auth-url";
 
-      getURLElement.onclick = function () {
+      getAuthUrlButton.onclick = function () {
         fetch(getAuthURL)
           .then(function (response) {
             return response.json();
@@ -73,7 +74,7 @@
       const getAccessToken = document.getElementById("getToken");
       const accessTokenElement = document.getElementById("accessToken");
       const getToken =
-        "https://f7b3bvhbr2.execute-api.ca-central-1.amazonaws.com/dev/api/token";
+        "https://3k7yb5v1ja.execute-api.eu-central-1.amazonaws.com/dev/api/token";
 
       getAccessToken.onclick = function () {
         let code = codeValue.value;
@@ -82,19 +83,22 @@
         if (decodeURIComponent(code) === code) {
           code = encodeURIComponent(codeValue.value);
         }
-        const getTokenRequest = getToken +  "/" + code;
+        const getTokenRequest = getToken + "/" + code;
         fetch(getTokenRequest)
           .then(function (response) {
+            console.log(response);
             return response.json();
           })
           .then(function (json) {
             accessTokenElement.innerText = JSON.stringify(json);
           });
       };
+      // --------------------- END OF STEP 2
       // -- STEP 3
       const getEvents = document.getElementById("getEvents");
       const events = document.getElementById("events");
-      const getCalendarEvents = "https://f7b3bvhbr2.execute-api.ca-central-1.amazonaws.com/dev/api/get-events";
+      const getCalendarEvents =
+        "https://3k7yb5v1ja.execute-api.eu-central-1.amazonaws.com/dev/api/get-events";
 
       getEvents.onclick = function () {
         const { access_token } = JSON.parse(accessTokenElement.innerText);
@@ -107,7 +111,7 @@
             events.innerText = JSON.stringify(json, null, 2);
           });
       };
-
+      // -- END OF STEP 3
     </script>
   </body>
 </html>
